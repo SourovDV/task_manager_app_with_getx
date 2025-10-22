@@ -34,13 +34,21 @@ class HomeView extends GetView<HomeController> {
                 ),
               ],
             ),
+            SizedBox(height: 10,),
             Expanded(
               child: Obx(()=>ListView.builder(
                   itemCount: controller.addData.length,
                    itemBuilder: (context, index) {
-                    return ListTile(
-                    title: Text(controller.addData[index].toString()),
-                      trailing: ElevatedButton(onPressed: ()=>controller.addData.removeAt(index), child: Icon(Icons.delete)),
+                    return Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: ListTile(
+                        tileColor: Colors.grey,
+                      shape:RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10))
+                      ),
+                      title: Text(controller.addData[index].toString(),style: TextStyle(color: Colors.white),),
+                        trailing: ElevatedButton(onPressed: ()=>controller.addData.removeAt(index), child: Icon(Icons.delete)),
+                      ),
                     );
                     },
               )),
