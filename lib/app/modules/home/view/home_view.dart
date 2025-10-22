@@ -40,7 +40,7 @@ class HomeView extends GetView<HomeController> {
                   itemCount: controller.addData.length,
                    itemBuilder: (context, index) {
                     return Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.symmetric(vertical: 8.0),
                       child: ListTile(
                         tileColor: Colors.grey,
                       shape:RoundedRectangleBorder(
